@@ -7,15 +7,20 @@
 <body>
     <div>
         <p1>Шаурма</p1>
+        <p></p>
         <button onclick="buy('шаурма','190 руб')">Купть шаурму</button>
+        <p></p>
         <p2>Цена: 190 рублей</p2>
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
         function buy(product, cost)
+        tg.MainButton.show()
+            tg.MainButton.enable()
             let awe = str(product + "," + cost);
             tg.sendData(awe)
+            
 
 
     </script>
