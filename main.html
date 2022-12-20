@@ -5,6 +5,19 @@
     <title>Telegramm WebApp</title>
 </head>
 <body>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        function buy(product, cost) {
+            tg.MainButton.enable();
+            tg.MainButton.show();
+            let awe = product + "," + cost;
+            tg.sendData(awe);
+            tg.close();
+        }
+
+
+    </script>
     <div>
         <p1>ШАВЕРМА</p1>
         <p></p>
@@ -12,20 +25,7 @@
         <p></p>
         <p2>Цена: 190 рублей</p2>
     </div>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        let tg = window.Telegram.WebApp;
-        function buy(product, cost) {
-            let product = "шаурма";
-            let cost = "190 рублей";
-            tg.MainButton.enable();
-            tg.MainButton.show();
-            let awe = str(product + "," + cost);
-            tg.sendData(awe);
-            tg.close();
-        }
+    
 
-
-    </script>
 </body>
 </html>
