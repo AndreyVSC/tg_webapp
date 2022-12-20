@@ -16,8 +16,8 @@
     <script>
         let tg = window.Telegram.WebApp;
         function buy(product, cost)
-        tg.MainButton.show()
             tg.MainButton.enable()
+            tg.MainButton.show()
             let awe = str(product + "," + cost);
             tg.sendData(awe)
             
