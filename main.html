@@ -16,12 +16,13 @@
     <script>
         let tg = window.Telegram.WebApp;
         function buy()
-            let product = "шаурма"
-            let cost = "190 рублей"
-            tg.MainButton.enable()
-            tg.MainButton.show()
+            let product = "шаурма";
+            let cost = "190 рублей";
+            tg.MainButton.enable();
+            tg.MainButton.show();
             let awe = str(product + "," + cost);
-            tg.sendData(awe)
+            tg.sendData(awe);
+            tg.close();
             
 
 
