@@ -1,0 +1,32 @@
+body {
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
+}
+.products{
+    max-width: 390px;
+}
+.inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px 200px;
+}
+.card {
+    text-align: center;
+}
+.btn{
+    display: inline-block;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: orange;
+    transition: background .2s linear;
+}
+.img {
+    width: 100px;
+}
+.btn:hover{
+    background: lightgreen;
+}
+.btn:active{
+    padding: 9px 18px;
+}

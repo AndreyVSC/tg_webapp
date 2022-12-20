@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Telegramm WebApp</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
@@ -13,18 +15,55 @@
             tg.MainButton.show();
             let awe = product + "," + cost;
             tg.sendData(awe);
+            tg.MainButton.onClick(callback)
+            setTimeout(10)
             tg.close();
         }
 
 
     </script>
-    <div>
-        <p1>ШАВЕРМА</p1>
-        <p></p>
-        <button onclick='buy("шаурма", "190 рублей")'>Куипть</button>
-        <p></p>
-        <p2>Цена: 190 рублей</p2>
-    </div>
+        <div id="products">
+            <div class="inner">
+                <div class="card">
+                    <img class="img" src="img/shaurma.png">
+                    <p></p>
+                    <p2>Цена: 190 рублей</p2>
+                    <p></p>
+                    <button class="btn" onclick="buy('шаурма','190 руб')">купить</button>
+                </div>
+                <div class="card">
+                    <img class="img" src="img/pizza.png">
+                    <p></p>
+                    <p2>Цена: 490 рублей</p2>
+                    <p></p>
+                    <button class="btn" onclick="buy('пицца','490 руб')">купить</button>
+                </div>
+
+                <div class="card">
+                    <img class="img" src="img/cake.png">
+                    <p></p>
+                    <p2>Цена: 1090 рублей</p2>
+                    <p></p>
+                    <button class="btn" onclick="buy('торт','1090 руб')">купить</button>
+                    
+                </div>
+                <div class="card">
+                    <img class="img" src="img/coffee.png">
+                    <p></p>
+                    <p2>Цена: 40 рублей</p2>
+                    <p></p>
+                    <button class="btn" onclick="buy('кофе','40 руб')">купить</button>
+
+                </div>
+                <div class="card">
+                    <img class="img" src="img/salad.png">
+                    <p></p>
+                    <p2>Цена: 90 рублей</p2>
+                    <p></p>
+                    <button class="btn" onclick="buy('салат','90 руб')">купить</button>
+                </div>
+            </div>
+        </div>
     
 
 </body>
