@@ -15,22 +15,22 @@
             let kek = document.querySelectorAll(':disabled')
             console.log(kek)
             if(typeof kek[0] != "undefined") {
-                data = data +[,]+[kek[0].value + "" + kek[0].innerHTML] + "_"
+                data = data +[,]+[kek[0].value + "-" + kek[0].innerHTML] + "_"
             }
             if(typeof kek[1] != "undefined") {
-                data = data+[,] +[kek[1].value + "" + kek[1].innerHTML,]+ "_"
+                data = data+[,] +[kek[1].value + "-" + kek[1].innerHTML,]+ "_"
             }
             if(typeof kek[2] != "undefined") {
-                data = data +[,]+ [kek[2].value + "" + kek[2].innerHTML,]+ "_"
+                data = data +[,]+ [kek[2].value + "-" + kek[2].innerHTML,]+ "_"
             }
             if(typeof kek[3] != "undefined") {
-                data = data+[,]+[kek[3].value + "" + kek[3].innerHTML,]+ "_"
+                data = data+[,]+[kek[3].value + "-" + kek[3].innerHTML,]+ "_"
             }
             if(typeof kek[4] != "undefined") {
-                data = data+[,]+[kek[4].value + "" + kek[4].innerHTML,]+ "_"
+                data = data+[,]+[kek[4].value + "-" + kek[4].innerHTML,]+ "_"
             }
             if(typeof kek[5] != "undefined") {
-                data = data+[,]+[kek[5].value + "" + kek[5].innerHTML,]+ "_"
+                data = data+[,]+[kek[5].value + "-" + kek[5].innerHTML,]+ "_"
             }
             tg.sendData(data);
         }
