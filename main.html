@@ -108,8 +108,9 @@
             
         }
         tg.MainButton.enable();
-        tg.MainButton.hide();
-
+        if (tg.MainButton.isVisible == true) {
+            tg.MainButton.hide();
+        }
         Telegram.WebApp.onEvent('mainButtonClicked', function () {
                 if (data != [[]]) {
                     tg.sendData(data);
