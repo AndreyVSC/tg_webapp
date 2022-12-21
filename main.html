@@ -107,13 +107,10 @@
             card.appendChild(plus);
 
 
-            tg.MainButton.enable();
             tg.MainButton.show();
-            let awe = product + "," + cost;
-            setTimeout(10);
             
-            tg.MainButton.onClick(end());
         }
+        Telegram.WebApp.onEvent('mainButtonClicked', getproducts())
 
 
     </script>
