@@ -32,11 +32,7 @@
             if(typeof kek[5] != "undefined") {
                 data = data+[,]+[kek[5].value + "" + kek[5].innerHTML,]+ "_"
             }
-            Telegram.WebApp.onEvent('mainButtonClicked', function () {
-                if (data != [[]]) {
-                    tg.sendData(data);
-                }
-            })
+
         }
         function setproductcost(card_id, operation) {
             card_id = card_id.toString();
@@ -112,7 +108,13 @@
             
         }
         tg.MainButton.enable();
-        tg.MainButton.show();
+        tg.MainButton.hide();
+
+        Telegram.WebApp.onEvent('mainButtonClicked', function () {
+                if (data != [[]]) {
+                    tg.sendData(data);
+                }
+            })
         
 
 
