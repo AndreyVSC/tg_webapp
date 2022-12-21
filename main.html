@@ -9,58 +9,153 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+        data = [[]]
         let tg = window.Telegram.WebApp;
-        function buy(product, cost) {
+        function end() {
+            tg.sendData(data);
+        }
+        function getproducts() {
+            let kek = document.querySelectorAll(':disabled')
+            console.log(kek)
+            if(typeof kek[0] != "undefined") {
+                data = data +[,]+[kek[0].value + "" + kek[0].innerHTML] + "_"
+            }
+            if(typeof kek[1] != "undefined") {
+                data = data+[,] +[kek[1].value + "" + kek[1].innerHTML,]+ "_"
+            }
+            if(typeof kek[2] != "undefined") {
+                data = data +[,]+ [kek[2].value + "" + kek[2].innerHTML,]+ "_"
+            }
+            if(typeof kek[3] != "undefined") {
+                data = data+[,]+[kek[3].value + "" + kek[3].innerHTML,]+ "_"
+            }
+            if(typeof kek[4] != "undefined") {
+                data = data+[,]+[kek[4].value + "" + kek[4].innerHTML,]+ "_"
+            }
+            if(typeof kek[5] != "undefined") {
+                data = data+[,]+[kek[5].value + "" + kek[5].innerHTML,]+ "_"
+            }
+            tg.sendData(data);
+        }
+        function setproductcost(card_id, operation) {
+            card_id = card_id.toString();
+            
+            let card = document.getElementById(card_id);
+            
+            old_value = card.innerHTML;
+            new_value = Number(old_value) + operation;
+            console.log(new_value);
+            card.innerHTML = new_value
+            product_name = card_id.split("_")[0]
+            card.setAttribute("value", product_name)
+            if (new_value <= 0) {
+                new_card_id = card_id.split("_")[0]+"_minus"
+                console.log(new_card_id);
+                let card = document.getElementById(new_card_id)
+                card.setAttribute("disabled",true)
+
+            }
+            else {
+                new_card_id = card_id.split("_")[0]+"_minus"
+                console.log(new_card_id);
+                let card = document.getElementById(new_card_id)
+                card.removeAttribute("disabled")
+
+             
+            }
+        }
+        function minus(minus_id) {
+            setproductcost(minus_id, -1);
+        }
+        function plus(minus_id) {
+            setproductcost(minus_id, +1);
+        }
+        function buy(product, cost, btn_id, card_id) {
+            let btn = document.getElementById(btn_id);
+            let card = document.getElementById(card_id);
+            card.removeChild(btn);
+
+
+            let minus = document.createElement("button");
+            minus.innerHTML = "-";
+            minus_id = card_id.split("_")[0].toString() + "_minus"
+            value_generated_id = card_id.split("_")[0].toString() + "_value";
+            minus.setAttribute("onclick", 'minus("'+value_generated_id+'")');
+            minus.setAttribute("id", minus_id)
+            minus.setAttribute("class", "interface")
+            card.appendChild(minus);
+
+
+            let value = document.createElement("button");
+            value.innerHTML = "1";
+            product_name = card_id.split("_")[0]
+            value.setAttribute("value", product_name)
+            value.id = value_generated_id;
+            value.setAttribute("disabled","True");
+            value.setAttribute("class", "interface")
+            card.appendChild(value);
+
+
+
+            let plus = document.createElement("button");
+            plus.innerHTML = "+";
+            plus_id = card_id.split("_")[0].toString() + "_plus"
+            value_generated_id = card_id.split("_")[0].toString() + "_value";
+            plus.setAttribute("onclick", 'plus("'+value_generated_id+'")');
+            plus.setAttribute("id", plus_id)
+            plus.setAttribute("class", "interface")
+            card.appendChild(plus);
+
+
             tg.MainButton.enable();
             tg.MainButton.show();
             let awe = product + "," + cost;
-            tg.sendData(awe);
-            tg.MainButton.onClick(callback)
-            setTimeout(10)
-            tg.close();
+            setTimeout(10);
+            
+            tg.MainButton.onClick(end());
         }
 
 
     </script>
         <div id="products">
             <div class="inner">
-                <div class="card">
+                <div class="card" id="shaurma_card">
                     <img class="img" src="img/shaurma.png">
                     <p></p>
                     <p2>Цена: 190 рублей</p2>
                     <p></p>
-                    <button class="btn" onclick="buy('шаурма','190 руб')">купить</button>
+                    <button class="btn" id="shaurma_button" onclick="buy('шаурма','190 руб', id, 'shaurma_card')">купить</button>
                 </div>
-                <div class="card">
+                <div class="card" id="pizza_card">
                     <img class="img" src="img/pizza.png">
                     <p></p>
                     <p2>Цена: 490 рублей</p2>
                     <p></p>
-                    <button class="btn" onclick="buy('пицца','490 руб')">купить</button>
+                    <button class="btn" id="pizza_button" onclick="buy('пицца','490 руб', id, 'pizza_card')">купить</button>
                 </div>
 
-                <div class="card">
+                <div class="card" id="cake_card">
                     <img class="img" src="img/cake.png">
                     <p></p>
                     <p2>Цена: 1090 рублей</p2>
                     <p></p>
-                    <button class="btn" onclick="buy('торт','1090 руб')">купить</button>
+                    <button class="btn" id="cake_button" onclick="buy('торт','1090 руб', id, 'cake_card')">купить</button>
                     
                 </div>
-                <div class="card">
+                <div class="card" id="coffee_card">
                     <img class="img" src="img/coffee.png">
                     <p></p>
                     <p2>Цена: 40 рублей</p2>
                     <p></p>
-                    <button class="btn" onclick="buy('кофе','40 руб')">купить</button>
+                    <button class="btn" id="coffee_button" onclick="buy('кофе','40 руб', id, 'coffee_card')">купить</button>
 
                 </div>
-                <div class="card">
+                <div class="card" id="salad_card">
                     <img class="img" src="img/salad.png">
                     <p></p>
                     <p2>Цена: 90 рублей</p2>
                     <p></p>
-                    <button class="btn" onclick="buy('салат','90 руб')">купить</button>
+                    <button class="btn" id="salad_button" onclick="buy('салат','90 руб', id, 'salad_card')">купить</button>
                 </div>
             </div>
         </div>

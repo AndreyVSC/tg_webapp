@@ -30,3 +30,23 @@ body {
 .btn:active{
     padding: 9px 18px;
 }
+.trash {
+    width: 25px;
+}
+.interface {
+    display: inline-block;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    text-size-adjust: 10px;
+    background: orange;
+    margin: 0px 2px 0px 2px;
+    transition: background .2s linear;
+    color:black;
+}
+.interface:hover{
+    background: lightgreen;
+}
+.interface:active{
+    padding: 9px 9px;
+}
