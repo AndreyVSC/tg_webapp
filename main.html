@@ -106,10 +106,11 @@
             plus.setAttribute("class", "interface")
             card.appendChild(plus);
 
-
+            tg.MainButton.enable()
             tg.MainButton.show();
             
         }
+        tg.MainButton.disable()
         Telegram.WebApp.onEvent('mainButtonClicked', getproducts())
 
 
