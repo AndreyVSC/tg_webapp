@@ -11,9 +11,6 @@
     <script>
         data = [[]]
         let tg = window.Telegram.WebApp;
-        function end() {
-            tg.sendData(data);
-        }
         function getproducts() {
             let kek = document.querySelectorAll(':disabled')
             console.log(kek)
@@ -35,9 +32,11 @@
             if(typeof kek[5] != "undefined") {
                 data = data+[,]+[kek[5].value + "" + kek[5].innerHTML,]+ "_"
             }
-            if (data != [[]]) {
-                tg.sendData(data);
-            }
+            Telegram.WebApp.onEvent('mainButtonClicked', function () {
+                if (data != [[]]) {
+                    tg.sendData(data);
+                }
+            })
         }
         function setproductcost(card_id, operation) {
             card_id = card_id.toString();
@@ -108,10 +107,11 @@
             plus.setAttribute("class", "interface")
             card.appendChild(plus);
 
-            tg.MainButton.enable()
+            
             tg.MainButton.show();
             
         }
+        tg.MainButton.enable();
         tg.MainButton.show();
         
 
