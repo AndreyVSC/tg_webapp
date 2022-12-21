@@ -32,7 +32,7 @@
             if(typeof kek[5] != "undefined") {
                 data = data+[,]+[kek[5].value + "" + kek[5].innerHTML,]+ "_"
             }
-
+            tg.sendData(data);
         }
         function setproductcost(card_id, operation) {
             card_id = card_id.toString();
@@ -115,7 +115,7 @@
         }
         Telegram.WebApp.onEvent('mainButtonClicked', function () {
                 if (data != [[]]) {
-                    tg.sendData(data);
+                    getproducts()
                 }
             })
         
