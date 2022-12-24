@@ -3,7 +3,8 @@ body {
     background: var(--tg-theme-bg-color);
 }
 .products{
-    max-width: 600px;
+    max-width: 520px;
+    max-height: 550px;
 }
 .inner{
     display: grid;
