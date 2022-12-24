@@ -3,7 +3,7 @@ body {
     background: var(--tg-theme-bg-color);
 }
 .products{
-    max-width: 390px;
+    max-width: 600px;
 }
 .inner{
     display: grid;
