@@ -4,7 +4,6 @@ body {
 }
 .products{
     max-width: 520px;
-    max-height: 550px;
 }
 .inner{
     display: grid;
