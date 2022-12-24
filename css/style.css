@@ -3,15 +3,16 @@ body {
     background: var(--tg-theme-bg-color);
 }
 .products{
-    max-width: 520px;
+    max-width: 530px;
 }
 .inner{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 260px 200px;
+    grid-template-rows: 200px 290px 200px;
 }
 .card {
     text-align: center;
+    max-height: 290px;
 }
 .btn{
     display: inline-block;
