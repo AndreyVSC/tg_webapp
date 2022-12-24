@@ -8,7 +8,7 @@ body {
 .inner{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 250px 200px;
+    grid-template-rows: 200px 260px 200px;
 }
 .card {
     text-align: center;
