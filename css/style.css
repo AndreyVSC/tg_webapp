@@ -7,12 +7,12 @@ body {
 }
 .inner{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 300px 300px;
+    grid-template-columns: 1fr12fr;
+    grid-template-rows: 200px 250px 300px;
 }
 .card {
     text-align: center;
-    max-height: 390px;
+    height: 390px;
 }
 .btn{
     display: inline-block;
