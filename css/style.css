@@ -22,7 +22,7 @@ body {
     transition: background .2s linear;
 }
 .img {
-    width: 100px;
+    width: 120px;
 }
 .btn:hover{
     background: lightgreen;
