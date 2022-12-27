@@ -62,8 +62,8 @@ body {
 }
 .displaying .prod_card{
     margin:40px auto 0px auto;
-    width:650px;
-    height: 780px;
+    width:375px;
+    height: 425px;
     padding:10px;
     background-color: white;
     border-radius:5px;
