@@ -11,7 +11,7 @@ body {
 .inner{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 270px 270px 270px 270px 270px;
+    grid-template-rows: 265px 265px 265px 265px 265px;
 }
 .card {
     text-align: center;
