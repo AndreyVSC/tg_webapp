@@ -127,11 +127,13 @@
         Telegram.WebApp.onEvent('mainButtonClicked', function () {
                 if (data != [[]]) {
                     if (document.getElementsByClassName("inner")[0].style.display != "None"){
-                    document.getElementsByClassName("inner")[0].style.display = "None"
-                    document.getElementsByClassName("comment")[0].style.display = "block"
+                    document.getElementsByClassName("inner")[0].style.display = "None";
+                    document.getElementsByClassName("comment")[0].style.display = "block";
+                    alert("TRUE")
                     }
                     else{
                         getproducts()
+                        alert("TRUE_2")
                     }
                 }
             })
