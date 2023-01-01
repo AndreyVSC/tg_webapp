@@ -10,6 +10,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         data = [[]]
+        comm = ""
         let tg = window.Telegram.WebApp;
         function getproducts() {
             let kek = document.querySelectorAll(':disabled')
@@ -41,7 +42,7 @@
             if(typeof kek[8] != "undefined") {
                 data = data+[,]+[kek[8].value + "-" + kek[8].innerHTML,]+ "_"
             }
-            tg.sendData(data);
+            tg.sendData(data+"***"+comm);
         }
         function setproductcost(card_id, operation) {
             card_id = card_id.toString();
@@ -125,9 +126,19 @@
         }
         Telegram.WebApp.onEvent('mainButtonClicked', function () {
                 if (data != [[]]) {
-                    getproducts()
+                    if (document.getElementsByClassName("inner")[0].style.display != "None"){
+                    document.getElementsByClassName("inner")[0].style.display = "None"
+                    document.getElementsByClassName("comment")[0].style.display = "block"
+                    }
+                    else{
+                        getproducts()
+                    }
                 }
             })
+
+        function comment(comment) {
+            comm = comment
+        }
 
         function image_button(hiddenn_div_id) {
             doc = document.getElementById(hiddenn_div_id).style.display = "block"
@@ -142,6 +153,13 @@
 
     </script>
         <div id="products">
+            <div class="comment" style="display: none;">
+                <div class="comment_card" style="display: none;" id="div_comment_card">
+                    <p class="txt" style="color: black">Введите комментарий к заказу</p>
+                    <button type="input" id="btn_comment_input">Комментарий</button>
+                    <button id="submit" onclick="comment(document.getElementById('btn_comment_input').value)"></button>
+                </div>
+            </div>
             <div class="displaying" style="display: none;">
                 <div class="prod_card" style="display: none;" id="pelmeni">
                     <img class="high_img" src="img/high_quality/Пельмени.png">
