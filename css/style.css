@@ -1,9 +1,11 @@
 .txt {
     color: black;
+    
 }
 body {
     color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
+    font-size: 16px;
 }
 .products{
     max-width: 530px;
@@ -11,7 +13,7 @@ body {
 .inner{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 265px 265px 265px 265px 265px;
+    grid-template-rows: 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px 265px;
 }
 .card {
     text-align: center;
